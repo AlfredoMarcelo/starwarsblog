@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+/* import { useParams } from "react-router-dom"
 
 const UserFavorite = () => {
 
@@ -11,4 +11,4 @@ const UserFavorite = () => {
   )
 }
 
-export default UserFavorite
+export default UserFavorite */

@@ -1,27 +1,31 @@
-import {BrowserRouter,Navigate,Route,Routes} from "react-router-dom"
+import {BrowserRouter,Switch,Route} from "react-router-dom"
 import React from 'react'
 import Home from "./views/Home"
 import AllData from "./views/AllData"
 import { Navbar } from "./components/Navbar";
-import { User } from "./views/User";
+/* import { User } from "./views/User"; */
 import NotFound from "./views/NotFound";
-import UserFavorite from "./views/UserFavorite";
-import Dashboard from "./views/Dashboard";
+/* import UserFavorite from "./views/UserFavorite"; */
+/* import Dashboard from "./views/Dashboard"; */
+import injectContext from "./store/appContext";
 
-export default function App (){
+function App(){
   return (
     <BrowserRouter>
       <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/all_data" element={<AllData/>} />
-        <Route path="/user" element={<User/>} />
-        <Route path="/usuarios" element={<Navigate to="/user"/>} />
-        <Route path="/user/:id" element={<UserFavorite/>} />
-        <Route path="/dashboard/*" element={<Dashboard/>} />
-        <Route path='*' element={<NotFound/>}/>
-      </Routes>
+
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route  path="/all_data" component={AllData} />
+        {/* <Route path="/user" component={<User/>} /> */}
+        {/* <Route path="/usuarios" component={<Navigate to="/user"/>} /> */}
+       {/*  <Route path="/user/:id" component={UserFavorite} /> */}
+        {/* <Route path="/dashboard/*" component={<Dashboard/>} /> */}
+        <Route path='*' component={NotFound}/>
+      </Switch>
     </BrowserRouter>
   );
 }
+
+export default injectContext(App);
 

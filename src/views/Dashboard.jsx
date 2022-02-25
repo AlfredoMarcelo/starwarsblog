@@ -1,4 +1,4 @@
-import { useNavigate,Route, Routes, Link } from 'react-router-dom'
+/* import { useNavigate,Route, Routes, Link } from 'react-router-dom'
 import React from 'react'
 
 const Dashboard = () => {
@@ -24,5 +24,5 @@ return (
     </div>
   )
 }
-
+ */
 export default Dashboard

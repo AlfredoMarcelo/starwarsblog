@@ -5,9 +5,10 @@ export const Navbar = () => {
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div className="container-fluid">
+  <div className="container">
     <a className="navbar-brand" href="#">
-      Navbar
+      StarWars
+      <img src="" className='' alt="" />
     </a>
     <button
       className="navbar-toggler"
@@ -21,7 +22,7 @@ export const Navbar = () => {
       <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <NavLink className="nav-link active" aria-current="page" to='/'>
             Home
@@ -29,10 +30,10 @@ export const Navbar = () => {
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to='/all_data'>
-            Character, planet and navs
+            Menu
           </NavLink>
         </li>
-        <li className="nav-item dropdown">
+        {/* <li className="nav-item dropdown">
           <a
             className="nav-link dropdown-toggle"
             href="#"
@@ -63,7 +64,7 @@ export const Navbar = () => {
               </a>
             </li>
           </ul>
-        </li>
+        </li> */}
       </ul>
     </div>
   </div>
