@@ -9,6 +9,8 @@ import NotFound from "./views/NotFound";
 /* import Dashboard from "./views/Dashboard"; */
 import injectContext from "./store/appContext";
 import BioCharacter from "./components/BioCharacter";
+import BioVehicle from "./components/BioVehicle";
+import BioPlanet from "./components/BioPlanet";
 
 function App(){
   return (
@@ -18,7 +20,9 @@ function App(){
       <Switch>
         <Route exact path="/" component={Home} />
         <Route  path="/all_data" component={AllData} />
-        <Route  path="/single_data" component={BioCharacter} />
+        <Route  path="/bio_character" component={BioCharacter} />
+        <Route  path="/bio_vehicle" component={BioVehicle} />
+        <Route  path="/bio_planet" component={BioPlanet} />
 
         {/* <Route path="/user" component={<User/>} /> */}
         {/* <Route path="/usuarios" component={<Navigate to="/user"/>} /> */}

@@ -14,9 +14,8 @@ const CardCharacters = (props) => {
   
   
   const sendUrl=()=>{
-    let dos = props.data.url
-    actions.fetchSingleCharacter(dos)
-    
+    let url = props.data.url
+    actions.fetchSingleCharacter(url)
   }
 
   return (
@@ -29,7 +28,7 @@ const CardCharacters = (props) => {
         </p>
         <div className="d-flex justify-content-between">
         <Link 
-        to='/single_data'  
+        to='/bio_character'  
         className="btn btn-dark"
         onClick={()=>sendUrl()}
         >

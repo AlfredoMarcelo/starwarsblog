@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import './BioCharacter.css'
+import './BioPlanet.css'
 
 
-
-const BioCharacter = () => {
+const BioPlanet = () => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -12,11 +11,11 @@ const BioCharacter = () => {
       <section>
         <div className="container">
           <div className="row mt-5">
-            <div className=" ton card mb-3">
+            <div className="ton card mb-3">
               <div className="row g-0">
                 <div className="col-md-4 col-lg-4 col-xl-4 col-xxl-4 my-auto text-center">
                   <img
-                    src="https://www.giantbomb.com/a/uploads/square_small/46/462814/3180417-5472872915-latest"
+                    src="https://qph.fs.quoracdn.net/main-qimg-380f514d63f3d9bcee09b0798797473a-pjlq"
                     className="img-fluid rounded-start rounded"
                     alt="..."
                   />
@@ -50,23 +49,26 @@ const BioCharacter = () => {
                     </p>
                     <ul className="list-group text-center">
                       <li className="list-group-item">
-                        Gender: {store.bio.gender}
+                        Rotation Period: {store.bio.rotation_period}
                       </li>
                       <li className="list-group-item">
-                        Height: {store.bio.height}
+                        Orbital_period: {store.bio.orbital_period}
                       </li>
-                      <li className="list-group-item">Mass: {store.bio.mass}</li>
+                      <li className="list-group-item">Diameter: {store.bio.diameter}</li>
                       <li className="list-group-item">
-                        Hair Color: {store.bio.hair_color}
-                      </li>
-                      <li className="list-group-item">
-                        Skin Color: {store.bio.skin_color}
+                        Climate: {store.bio.climate}
                       </li>
                       <li className="list-group-item">
-                        Eye Color: {store.bio.eye_color}
+                        Gravity: {store.bio.gravity}
                       </li>
                       <li className="list-group-item">
-                        Birth Year: {store.bio.birth_year}
+                        Terrain: {store.bio.terrain}
+                      </li>
+                      <li className="list-group-item">
+                        Surface Water: {store.bio.surface_water}
+                      </li>
+                      <li className="list-group-item">
+                        Population: {store.bio.population}
                       </li>
                     </ul>
                   </div>
@@ -80,4 +82,4 @@ const BioCharacter = () => {
   );
 };
 
-export default BioCharacter;
+export default BioPlanet;

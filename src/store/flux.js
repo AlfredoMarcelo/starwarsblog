@@ -61,14 +61,38 @@ export const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore()
         console.log(store.bio)
       },
+      fetchSinglePlanet:(item)=>{
+        //console.log(item)
+        const actions = getActions()
+        fetch(item,{
+          method: "GET",
+          headers:{"Content-type":"application/json"},
+        })
+          .then((resp)=>resp.json())
+          .then((response)=>{actions.setterList(response)})
+        
+        const store = getStore()
+        console.log(store.bio)
+      },
+      fetchSingleVehicle:(item)=>{
+        //console.log(item)
+        const actions = getActions()
+        fetch(item,{
+          method: "GET",
+          headers:{"Content-type":"application/json"},
+        })
+          .then((resp)=>resp.json())
+          .then((response)=>{actions.setterList(response)})
+        
+        const store = getStore()
+        console.log(store.bio)
+      },
       setterList:(response)=>{
         const store = getStore()
         setStore({bio:response})
         console.log(store.bio)
 
-      }
-
-      
+      }      
     //Realizar un fetch para planetas y para vehiculos LISTO
     },
   };

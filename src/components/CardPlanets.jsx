@@ -11,6 +11,11 @@ const Planets = (props) => {
     actions.addFavorite(nameItem);
   }
 
+  const sendUrl=()=>{
+    const url = props.data.url
+    actions.fetchSinglePlanet(url)
+  }
+
 
   return (
     <div className="card text-light" >
@@ -23,7 +28,11 @@ const Planets = (props) => {
         <h5 className="card-title">Name Planet: {props.data.name}</h5>
         <p className="card-text">Type: {props.data.terrain}</p>
         <div className="d-flex justify-content-between">
-        <Link to="/" className="btn btn-dark">
+        <Link 
+        to="/bio_planet" 
+        className="btn btn-dark"
+        onClick={()=>sendUrl()}
+        >
           See Planet
         </Link>
         <button  

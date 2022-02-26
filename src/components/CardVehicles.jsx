@@ -8,10 +8,13 @@ const CardVehicles = (props) => {
   
   const sendName=()=>{
       let nameItem = props.data.name
-      console.log(nameItem)
       //agregar action que guarde el nombre en el store favorite array
       actions.addFavorite(nameItem);
+  }
 
+  const sendUrl=()=>{
+    let url = props.data.url
+    actions.fetchSingleVehicle(url)
   }
 
   return (
@@ -23,7 +26,11 @@ const CardVehicles = (props) => {
           {props.data.model}
         </p>
         <div className="d-flex justify-content-between">
-        <Link to="/" className="btn btn-dark">
+        <Link 
+        to="/bio_vehicle" 
+        className="btn btn-dark"
+        onClick={()=>sendUrl()}
+        >
           See Vehicle
         </Link>
         <button  className="btn btn-danger" onClick={() => sendName()}>

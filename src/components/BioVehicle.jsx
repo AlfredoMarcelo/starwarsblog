@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import './BioCharacter.css'
+import './BioVehicle.css';
 
 
-
-const BioCharacter = () => {
+const BioVehicle = () => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -12,11 +11,11 @@ const BioCharacter = () => {
       <section>
         <div className="container">
           <div className="row mt-5">
-            <div className=" ton card mb-3">
+            <div className="ton card mb-3">
               <div className="row g-0">
                 <div className="col-md-4 col-lg-4 col-xl-4 col-xxl-4 my-auto text-center">
                   <img
-                    src="https://www.giantbomb.com/a/uploads/square_small/46/462814/3180417-5472872915-latest"
+                    src="https://static.turbosquid.com/Preview/2016/11/16__10_31_21/ScreenShot20161028at10.33.59AM.jpg52658B71-F4F8-44B3-9CB1-1D195CD5BE0FLarge.jpg"
                     className="img-fluid rounded-start rounded"
                     alt="..."
                   />
@@ -50,23 +49,29 @@ const BioCharacter = () => {
                     </p>
                     <ul className="list-group text-center">
                       <li className="list-group-item">
-                        Gender: {store.bio.gender}
+                        Model: {store.bio.model}
                       </li>
                       <li className="list-group-item">
-                        Height: {store.bio.height}
+                        Manufacturer: {store.bio.manufacturer}
                       </li>
-                      <li className="list-group-item">Mass: {store.bio.mass}</li>
+                      <li className="list-group-item">Cost in Credits: {store.bio.cost_in_credits}</li>
                       <li className="list-group-item">
-                        Hair Color: {store.bio.hair_color}
-                      </li>
-                      <li className="list-group-item">
-                        Skin Color: {store.bio.skin_color}
+                        Length: {store.bio.length}
                       </li>
                       <li className="list-group-item">
-                        Eye Color: {store.bio.eye_color}
+                        Crew: {store.bio.crew}
                       </li>
                       <li className="list-group-item">
-                        Birth Year: {store.bio.birth_year}
+                        Passengers: {store.bio.passengers}
+                      </li>
+                      <li className="list-group-item">
+                        Cargo Capacity: {store.bio.cargo_capacity}
+                      </li>
+                      <li className="list-group-item">
+                        Consumables: {store.bio.consumables}
+                      </li>
+                      <li className="list-group-item">
+                        Vehicle Class: {store.bio.vehicle_class}
                       </li>
                     </ul>
                   </div>
@@ -80,4 +85,4 @@ const BioCharacter = () => {
   );
 };
 
-export default BioCharacter;
+export default BioVehicle;
