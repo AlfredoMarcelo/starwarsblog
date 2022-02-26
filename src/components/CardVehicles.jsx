@@ -3,9 +3,16 @@ import { Link } from 'react-router-dom'
 import { Context } from '../store/appContext'
 
 const CardVehicles = (props) => {
-
+  
   const {store,actions}=useContext(Context)
+  
+  const sendName=()=>{
+      let nameItem = props.data.name
+      console.log(nameItem)
+      //agregar action que guarde el nombre en el store favorite array
+      actions.addFavorite(nameItem);
 
+  }
 
   return (
     <div className='card text-light' >
@@ -19,9 +26,9 @@ const CardVehicles = (props) => {
         <Link to="/" className="btn btn-dark">
           See Vehicle
         </Link>
-        <Link to="/" className="btn btn-danger">
+        <button  className="btn btn-danger" onClick={() => sendName()}>
         <i className="bi bi-star-half"></i>
-        </Link>
+        </button>
         </div>
       </div>
     </div>

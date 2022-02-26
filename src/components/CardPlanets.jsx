@@ -1,9 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const Planets = (props) => {
+  
   const {store, actions} = useContext(Context)
+
+  const sendName=()=>{
+    let nameItem = props.data.name
+    actions.addFavorite(nameItem);
+  }
+
 
   return (
     <div className="card text-light" >
@@ -19,9 +26,12 @@ const Planets = (props) => {
         <Link to="/" className="btn btn-dark">
           See Planet
         </Link>
-        <Link to="/" className="btn btn-danger">
+        <button  
+        className="btn btn-danger"
+        onClick={()=>sendName()}
+        >
         <i className="bi bi-star-half"></i>
-        </Link>
+        </button>
         </div>
       </div>
     </div>

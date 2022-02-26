@@ -5,8 +5,10 @@ import CardVehicles from "../components/CardVehicles";
 import './AllData.css';
 import { Context } from "../store/appContext";
 import Footer from "../components/Footer";
+import BioCharacter from "../components/BioCharacter";
 
 const AllData = (props) => {
+  /* console.log(props) */
   //Aqui se llama el flux
   const { store, actions } = useContext(Context);
 
@@ -15,9 +17,9 @@ const AllData = (props) => {
     actions.fetchPlanets();
     actions.fetchVehicles();
   }, []);
-  console.log(store.character);
+  /* console.log(store.character);
   console.log(store.planets);
-  console.log(store.vehicles);
+  console.log(store.vehicles); */
 
   return (
     <div className="container">
@@ -33,7 +35,7 @@ const AllData = (props) => {
         </div>
         <h1 className="text-light py-1">Vehicles</h1>
         <div className="d-flex flex-nowrap py-1 ">
-          {store.vehicles.map((item)=><div className="col-12 col-md-6 col-lg-4 mb-2"><CardVehicles data={item}/></div>)}  
+          {store.vehicles.map((item,i)=><div className="col-12 col-md-6 col-lg-4 mb-2"><CardVehicles data={item}/></div>)}  
         </div>        
       </div>
       <Footer/>

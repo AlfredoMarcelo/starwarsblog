@@ -8,6 +8,7 @@ import NotFound from "./views/NotFound";
 /* import UserFavorite from "./views/UserFavorite"; */
 /* import Dashboard from "./views/Dashboard"; */
 import injectContext from "./store/appContext";
+import BioCharacter from "./components/BioCharacter";
 
 function App(){
   return (
@@ -17,6 +18,8 @@ function App(){
       <Switch>
         <Route exact path="/" component={Home} />
         <Route  path="/all_data" component={AllData} />
+        <Route  path="/single_data" component={BioCharacter} />
+
         {/* <Route path="/user" component={<User/>} /> */}
         {/* <Route path="/usuarios" component={<Navigate to="/user"/>} /> */}
        {/*  <Route path="/user/:id" component={UserFavorite} /> */}

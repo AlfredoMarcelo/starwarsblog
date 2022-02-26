@@ -4,7 +4,20 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const CardCharacters = (props) => {
+  
   const { store, actions } = useContext(Context);
+
+  const sendName = () => {
+    let nameItem = props.data.name
+    actions.addFavorite(nameItem)
+  }
+  
+  
+  const sendUrl=()=>{
+    let dos = props.data.url
+    actions.fetchSingleCharacter(dos)
+    
+  }
 
   return (
     <div className="card text-light" >
@@ -15,12 +28,19 @@ const CardCharacters = (props) => {
           {props.data.height}
         </p>
         <div className="d-flex justify-content-between">
-        <Link to="/" className="btn btn-dark">
+        <Link 
+        to='/single_data'  
+        className="btn btn-dark"
+        onClick={()=>sendUrl()}
+        >
           See Character
         </Link>
-        <Link to="/" className="btn btn-danger">
+        <button
+        className="btn btn-danger" 
+        onClick={()=>sendName()}
+        >
         <i className="bi bi-star-half"></i>
-        </Link>
+        </button>
         </div>
       </div>
     </div>
