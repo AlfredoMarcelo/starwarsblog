@@ -1,6 +1,6 @@
 # Blog de StarWars ⭐ con React.js ❄
 
-_Utilicé fetch para consumir una Api que contiene información de personajes, vehiculos y mundos de la pelicula StarWars, las cuales las liste dentro de cards con Bootstrap. Utilicé Flux 📄 para organizar el flujo de los datos de la aplicación. Además, incluí un función para que los usuarios puedan guardar sus items favoritos y que tambien puedan eliminarlos, haciendo uso de onclick, array y useState.
+_Utilicé fetch para consumir una Api que contiene información de personajes, vehiculos y mundos de la pelicula StarWars, las cuales las liste dentro de cards con Bootstrap. Utilicé Flux 📄 para organizar el flujo de los datos de la aplicación. Además, incluí un función para que los usuarios puedan guardar sus items favoritos y que tambien puedan eliminarlos, haciendo uso de onclick, array y useState._
 
 
 ## Construido con 🛠️
