@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 const Planets = (props) => {
   
   const {store, actions} = useContext(Context)
+  console.log('props', props)
 
   const sendName=()=>{
     let nameItem = props.data.name

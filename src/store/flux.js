@@ -12,28 +12,25 @@ export const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       fetchCharacter: () => {
-        fetch("https://swapi.dev/api/people", {
+        fetch("https://swapi.info/api/people", {
           method: "GET",
           headers: { "Content-type": "application/json" },
         })
           .then((resp) => resp.json())
-          .then((response) => setStore({ character: response.results }));
+          .then((response) => setStore({ character: response }));
       },
       fetchPlanets: () => {
-        fetch("https://swapi.dev/api/planets",{
-          method: "GET",
-          headers: {"Content-type": "application/json"},
-        })
+        fetch("https://swapi.info/api/planets")
           .then((resp)=>resp.json())
-          .then((response)=> setStore({planets: response.results}))
+          .then((response)=> setStore({planets: response}))
       },
       fetchVehicles:() => {
-        fetch("https://swapi.dev/api/vehicles", {
+        fetch("https://swapi.info/api/vehicles", {
           method: "GET",
           headers: {"Content-type": "application/json"},
         })
           .then((resp)=>resp.json())
-          .then((response)=>setStore({vehicles:response.results}))
+          .then((response)=>setStore({vehicles:response}))
       },
       addFavorite:(item)=>{
         //consultar sobre guardar getStore y getAction en variables

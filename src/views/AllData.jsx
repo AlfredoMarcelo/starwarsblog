@@ -8,18 +8,16 @@ import Footer from "../components/Footer";
 import BioCharacter from "../components/BioCharacter";
 
 const AllData = (props) => {
-  /* console.log(props) */
   //Aqui se llama el flux
   const { store, actions } = useContext(Context);
-
+  console.log('store', store)
+  
   useEffect(() => {
     actions.fetchCharacter();
     actions.fetchPlanets();
     actions.fetchVehicles();
   }, []);
-  /* console.log(store.character);
-  console.log(store.planets);
-  console.log(store.vehicles); */
+  console.log('store', store)
 
   return (
     <div className="container">
@@ -27,15 +25,15 @@ const AllData = (props) => {
         <h1 className="text-light py-1">Characters</h1>
         <div className="d-flex flex-nowrap py-1">
           {/* <Characters este_es_mi_prop={este_es_mi_Resultado} /> */}
-          {store.character.map((item,i)=> <div className="col-12 col-md-6 col-lg-4 mb-2"><CardCharacters data={item}/></div>)}
+          {store?.character?.map((item,i)=> <div className="col-12 col-md-6 col-lg-4 mb-2"><CardCharacters data={item}/></div>)}
         </div>
         <h1 className="text-light py-1">Planets</h1>
         <div className="d-flex flex-nowrap py-1">
-          {store.planets.map((item)=> <div className="col-12 col-md-6 col-lg-4 mb-2"><CardPlanets data={item}/></div>)}  
+          {store?.planets?.map((item)=> <div className="col-12 col-md-6 col-lg-4 mb-2"><CardPlanets data={item}/></div>)}  
         </div>
         <h1 className="text-light py-1">Vehicles</h1>
         <div className="d-flex flex-nowrap py-1 ">
-          {store.vehicles.map((item,i)=><div className="col-12 col-md-6 col-lg-4 mb-2"><CardVehicles data={item}/></div>)}  
+          {store?.vehicles?.map((item,i)=><div className="col-12 col-md-6 col-lg-4 mb-2"><CardVehicles data={item}/></div>)}  
         </div>        
       </div>
       <Footer/>

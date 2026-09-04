@@ -23,11 +23,6 @@ function App(){
         <Route  path="/bio_character" component={BioCharacter} />
         <Route  path="/bio_vehicle" component={BioVehicle} />
         <Route  path="/bio_planet" component={BioPlanet} />
-
-        {/* <Route path="/user" component={<User/>} /> */}
-        {/* <Route path="/usuarios" component={<Navigate to="/user"/>} /> */}
-       {/*  <Route path="/user/:id" component={UserFavorite} /> */}
-        {/* <Route path="/dashboard/*" component={<Dashboard/>} /> */}
         <Route path='*' component={NotFound}/>
       </Switch>
     </BrowserRouter>
